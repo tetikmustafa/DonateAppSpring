@@ -40,11 +40,6 @@ public class Donor {
     private DonationType donationType;
 
 
-//    // İlişkilendirme (Donation ile OneToMany olabilir)
-//     @OneToMany(mappedBy = "donor", cascade = CascadeType.ALL)
-//     private List<Donation> donations;
-
-
     public Long getDonorId() {
         return donorId;
     }

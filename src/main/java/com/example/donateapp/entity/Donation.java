@@ -4,6 +4,8 @@ import jakarta.persistence.*;
 import lombok.*;
 
 import java.sql.Date;
+import java.util.ArrayList;
+import java.util.List;
 
 @Entity
 @Data
@@ -40,10 +42,8 @@ public class Donation {
     @JoinColumn(name = "DonorID", nullable = false)
     private Donor donor;
 
-//    // İlişkilendirme (Event ile ManyToOne olabilir)
-//    @ManyToOne
-//    @JoinColumn(name = "event_id", nullable = true)
-//    private Event event;
+    @OneToMany(mappedBy = "donation", cascade = CascadeType.ALL, orphanRemoval = true)
+    private List<DonationEvent> donationEvents = new ArrayList<>();
 
 
     public Long getDonationId() {

@@ -6,6 +6,8 @@ import lombok.NoArgsConstructor;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 
+import java.util.List;
+
 
 @Entity
 @Data
@@ -31,15 +33,9 @@ public class Volunteer {
     @JoinColumn(name = "TaskTypeID", nullable = false)
     private TaskType taskType;
 
-//    // İlişkilendirme (Event ile ManyToMany olabilir)
-//    @ManyToMany
-//    @JoinTable(
-//            name = "event_volunteer",
-//            joinColumns = @JoinColumn(name = "volunteer_id"),
-//            inverseJoinColumns = @JoinColumn(name = "event_id")
-//    )
-//    private List<Event> events;
 
+    @OneToMany(mappedBy = "volunteer", cascade = CascadeType.ALL, orphanRemoval = true)
+    private List<VolunteerEvent> volunteerEvents;
 
     public Long getVolunteerId() {
         return volunteerId;

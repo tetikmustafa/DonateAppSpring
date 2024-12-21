@@ -7,6 +7,7 @@ import lombok.AllArgsConstructor;
 import lombok.Builder;
 
 import java.sql.Date;
+import java.util.ArrayList;
 import java.util.List;
 
 @Entity
@@ -38,13 +39,12 @@ public class Event {
     @JoinColumn(name = "EventTypeID", nullable = false)
     private EventType eventType;
 
-//    // İlişkilendirme (Volunteer ile ManyToMany olabilir)
-//    @ManyToMany(mappedBy = "events")
-//    private List<Volunteer> volunteers;
-//
-//    // İlişkilendirme (Donation ile OneToMany olabilir)
-//    @OneToMany(mappedBy = "event", cascade = CascadeType.ALL)
-//    private List<Donation> donations;
+    @OneToMany(mappedBy = "event", cascade = CascadeType.ALL, orphanRemoval = true)
+    private List<DonationEvent> donationEvents = new ArrayList<>();
+
+    @OneToMany(mappedBy = "event", cascade = CascadeType.ALL, orphanRemoval = true)
+    private List<VolunteerEvent> volunteerEvents;
+
 
 
     public Long getEventId() {
