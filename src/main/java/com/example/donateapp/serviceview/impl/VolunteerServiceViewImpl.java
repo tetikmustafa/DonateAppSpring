@@ -10,6 +10,8 @@ import com.example.donateapp.serviceview.VolunteerServiceView;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+
 @Service
 public class VolunteerServiceViewImpl implements VolunteerServiceView {
 
@@ -61,5 +63,10 @@ public class VolunteerServiceViewImpl implements VolunteerServiceView {
     @Override
     public void deleteAll() {
         volunteerService.deleteAll();
+    }
+
+    @Override
+    public List<Object[]> getVolunteersWithTasks() {
+        return volunteerService.getVolunteersWithTasks();
     }
 }

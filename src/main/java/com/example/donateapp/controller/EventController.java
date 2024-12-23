@@ -74,4 +74,18 @@ public class EventController {
         return new ResponseEntity<>("Volunteer assigned to event successfully.", HttpStatus.OK);
     }
 
+    @GetMapping("/totalDonationsPerEvent")
+    public ResponseEntity<Iterable<Object[]>> getTotalDonationsPerEvent() {
+        return new ResponseEntity<>(eventServiceView.getTotalDonationsPerEvent(), HttpStatus.OK);
+    }
+
+    @GetMapping("/eventsWithoutDonations")
+    public ResponseEntity<Iterable<Object[]>> getEventsWithoutDonations() {
+        return new ResponseEntity<>(eventServiceView.getEventsWithoutDonations(), HttpStatus.OK);
+    }
+
+    @GetMapping("/eventVolunteerDonationsByCurrency")
+    public ResponseEntity<Iterable<Object[]>> getEventVolunteerDonationsByCurrency() {
+        return new ResponseEntity<>(eventServiceView.getEventVolunteerDonationsByCurrency(), HttpStatus.OK);
+    }
 }

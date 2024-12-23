@@ -16,4 +16,6 @@ public interface VolunteerService {
     void deleteById(Long volunteerId);
 
     void deleteAll();
+
+    List<Object[]> getVolunteersWithTasks();
 }

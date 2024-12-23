@@ -47,4 +47,24 @@ public class DonationController {
         donationServiceView.deleteAll();
         return new ResponseEntity<>("All donations have been deleted", HttpStatus.OK);
     }
+
+    @GetMapping("/maxDonationPerCurrency")
+    public ResponseEntity<Iterable<Object[]>> getMaxDonationPerCurrency() {
+        return new ResponseEntity<>(donationServiceView.getMaxDonationPerCurrency() , HttpStatus.OK);
+    }
+
+    @GetMapping("/sumDonationPerCurrency")
+    public ResponseEntity<Iterable<Object[]>> getSumDonationPerCurrency() {
+        return new ResponseEntity<>(donationServiceView.getSumDonationPerCurrency() , HttpStatus.OK);
+    }
+
+    @GetMapping("/avgDonationPerMethod")
+    public ResponseEntity<Iterable<Object[]>> getAvgDonationPerMethod() {
+        return new ResponseEntity<>(donationServiceView.getAvgDonationPerMethod() , HttpStatus.OK);
+    }
+
+    @GetMapping("/donationsByTypeMethodCurrency")
+    public ResponseEntity<Iterable<Object[]>> getDonationsByTypeMethodCurrency() {
+        return new ResponseEntity<>(donationServiceView.getDonationsByTypeMethodCurrency() , HttpStatus.OK);
+    }
 }

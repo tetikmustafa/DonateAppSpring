@@ -47,4 +47,9 @@ public class VolunteerController {
         volunteerServiceView.deleteAll();
         return new ResponseEntity<>("All volunteers have been deleted", HttpStatus.OK);
     }
+
+    @GetMapping("/volunteersWithTasks")
+    public ResponseEntity<Object> getVolunteersWithTasks() {
+        return new ResponseEntity<>(volunteerServiceView.getVolunteersWithTasks(), HttpStatus.OK);
+    }
 }

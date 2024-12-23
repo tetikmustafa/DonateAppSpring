@@ -3,6 +3,8 @@ package com.example.donateapp.serviceview;
 import com.example.donateapp.dto.donation.DonationReadDto;
 import com.example.donateapp.dto.donation.DonationWriteDto;
 
+import java.util.List;
+
 public interface DonationServiceView {
 
     DonationReadDto save(DonationWriteDto donationWriteDto);
@@ -16,4 +18,12 @@ public interface DonationServiceView {
     void deleteById(Long donationId);
 
     void deleteAll();
+
+    List<Object[]> getMaxDonationPerCurrency();
+
+    List<Object[]> getSumDonationPerCurrency();
+
+    List<Object[]> getAvgDonationPerMethod();
+
+    List<Object[]> getDonationsByTypeMethodCurrency();
 }

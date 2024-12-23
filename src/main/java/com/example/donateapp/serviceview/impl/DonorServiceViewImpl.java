@@ -10,6 +10,8 @@ import com.example.donateapp.serviceview.DonorServiceView;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+
 @Service
 public class DonorServiceViewImpl implements DonorServiceView {
 
@@ -61,5 +63,25 @@ public class DonorServiceViewImpl implements DonorServiceView {
     @Override
     public void deleteAll() {
         donorService.deleteAll();
+    }
+
+    @Override
+    public List<Object[]> getDonorDetailsWithDonations() {
+        return donorService.getDonorDetailsWithDonations();
+    }
+
+    @Override
+    public List<Object[]> getDonorsWithDonationMethods() {
+        return donorService.getDonorsWithDonationMethods();
+    }
+
+    @Override
+    public List<Object[]> getDonorTotalDonations() {
+        return donorService.getDonorTotalDonations();
+    }
+
+    @Override
+    public List<Object[]> getDonorsWithDonationsAbove(Double amount) {
+        return donorService.getDonorsWithDonationsAbove(amount);
     }
 }

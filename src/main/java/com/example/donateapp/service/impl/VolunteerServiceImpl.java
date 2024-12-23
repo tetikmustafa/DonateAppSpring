@@ -43,4 +43,9 @@ public class VolunteerServiceImpl implements VolunteerService {
     public void deleteAll() {
         volunteerRepository.deleteAll();
     }
+
+    @Override
+    public List<Object[]> getVolunteersWithTasks() {
+        return volunteerRepository.getVolunteersWithTasks();
+    }
 }

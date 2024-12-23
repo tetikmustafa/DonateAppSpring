@@ -47,4 +47,24 @@ public class DonorController {
         donorServiceView.deleteAll();
         return new ResponseEntity<>("All donors have been deleted", HttpStatus.OK);
     }
+
+    @GetMapping("/donorDetailsWithDonations")
+    public ResponseEntity<Object> getDonorDetailsWithDonations() {
+        return new ResponseEntity<>(donorServiceView.getDonorDetailsWithDonations() , HttpStatus.OK);
+    }
+
+    @GetMapping("/donorsWithDonationMethods")
+    public ResponseEntity<Object> getDonorsWithDonationMethods() {
+        return new ResponseEntity<>(donorServiceView.getDonorsWithDonationMethods() , HttpStatus.OK);
+    }
+
+    @GetMapping("/donorTotalDonations")
+    public ResponseEntity<Object> getDonorTotalDonations() {
+        return new ResponseEntity<>(donorServiceView.getDonorTotalDonations() , HttpStatus.OK);
+    }
+
+    @GetMapping("/donorsWithDonationsAbove/{amount}")
+    public ResponseEntity<Object> getDonorsWithDonationsAbove(@PathVariable Double amount) {
+        return new ResponseEntity<>(donorServiceView.getDonorsWithDonationsAbove(amount) , HttpStatus.OK);
+    }
 }

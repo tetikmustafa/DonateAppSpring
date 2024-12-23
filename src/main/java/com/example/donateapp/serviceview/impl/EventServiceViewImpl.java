@@ -10,6 +10,8 @@ import com.example.donateapp.serviceview.EventServiceView;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+
 @Service
 public class EventServiceViewImpl implements EventServiceView {
 
@@ -61,5 +63,20 @@ public class EventServiceViewImpl implements EventServiceView {
     @Override
     public void deleteAll() {
         eventService.deleteAll();
+    }
+
+    @Override
+    public List<Object[]> getTotalDonationsPerEvent() {
+        return eventService.getTotalDonationsPerEvent();
+    }
+
+    @Override
+    public List<Object[]> getEventsWithoutDonations() {
+        return eventService.getEventsWithoutDonations();
+    }
+
+    @Override
+    public List<Object[]> getEventVolunteerDonationsByCurrency() {
+        return eventService.getEventVolunteerDonationsByCurrency();
     }
 }

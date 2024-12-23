@@ -16,4 +16,11 @@ public interface EventService {
     void deleteById(Long eventId);
 
     void deleteAll();
+
+    List<Object[]> getTotalDonationsPerEvent();
+
+    List<Object[]> getEventsWithoutDonations();
+
+    List<Object[]> getEventVolunteerDonationsByCurrency();
+
 }

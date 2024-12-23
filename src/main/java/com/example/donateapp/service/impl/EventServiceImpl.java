@@ -44,4 +44,19 @@ public class EventServiceImpl implements EventService {
     public void deleteAll() {
         eventRepository.deleteAll();
     }
+
+    @Override
+    public List<Object[]> getTotalDonationsPerEvent() {
+        return eventRepository.getTotalDonationsPerEvent();
+    }
+
+    @Override
+    public List<Object[]> getEventsWithoutDonations() {
+        return eventRepository.getEventsWithoutDonations();
+    }
+
+    @Override
+    public List<Object[]> getEventVolunteerDonationsByCurrency() {
+        return eventRepository.getEventVolunteerDonationsByCurrency();
+    }
 }

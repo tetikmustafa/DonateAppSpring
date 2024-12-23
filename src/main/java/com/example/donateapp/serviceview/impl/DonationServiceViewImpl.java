@@ -11,6 +11,7 @@ import com.example.donateapp.service.DonorService;
 import com.example.donateapp.serviceview.DonationServiceView;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import java.util.List;
 
 @Service
 public class DonationServiceViewImpl implements DonationServiceView {
@@ -75,5 +76,25 @@ public class DonationServiceViewImpl implements DonationServiceView {
     @Override
     public void deleteAll() {
         donationService.deleteAll();
+    }
+
+    @Override
+    public List<Object[]> getMaxDonationPerCurrency() {
+        return donationService.getMaxDonationPerCurrency();
+    }
+
+    @Override
+    public List<Object[]> getSumDonationPerCurrency() {
+        return donationService.getSumDonationPerCurrency();
+    }
+
+    @Override
+    public List<Object[]> getAvgDonationPerMethod() {
+        return donationService.getAvgDonationPerMethod();
+    }
+
+    @Override
+    public List<Object[]> getDonationsByTypeMethodCurrency() {
+        return donationService.getDonationsByTypeMethodCurrency();
     }
 }

@@ -16,4 +16,13 @@ public interface DonationService {
     void deleteById(Long donationId);
 
     void deleteAll();
+
+    List<Object[]> getMaxDonationPerCurrency();
+
+    List<Object[]> getSumDonationPerCurrency();
+
+    List<Object[]> getAvgDonationPerMethod();
+
+    List<Object[]> getDonationsByTypeMethodCurrency();
+
 }

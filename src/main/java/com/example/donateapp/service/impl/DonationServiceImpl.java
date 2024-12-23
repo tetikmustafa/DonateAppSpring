@@ -43,4 +43,24 @@ public class DonationServiceImpl implements DonationService {
     public void deleteAll() {
         donationRepository.deleteAll();
     }
+
+    @Override
+    public List<Object[]> getMaxDonationPerCurrency() {
+        return donationRepository.getMaxDonationPerCurrency();
+    }
+
+    @Override
+    public List<Object[]> getSumDonationPerCurrency() {
+        return donationRepository.getSumDonationPerCurrency();
+    }
+
+    @Override
+    public List<Object[]> getAvgDonationPerMethod() {
+        return donationRepository.getAvgDonationPerMethod();
+    }
+
+    @Override
+    public List<Object[]> getDonationsByTypeMethodCurrency() {
+        return donationRepository.getDonationsByTypeMethodCurrency();
+    }
 }

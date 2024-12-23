@@ -15,13 +15,13 @@ public class DonorServiceImpl implements DonorService {
     DonorRepository donorRepository;
 
     @Override
-    public void save(Donor donation) {
-        donorRepository.save(donation);
+    public void save(Donor donor) {
+        donorRepository.save(donor);
     }
 
     @Override
-    public Donor findById(Long donationId) {
-        return donorRepository.findById(donationId).orElse(null);
+    public Donor findById(Long donorId) {
+        return donorRepository.findById(donorId).orElse(null);
     }
 
     @Override
@@ -29,17 +29,37 @@ public class DonorServiceImpl implements DonorService {
         return donorRepository.findAll();}
 
     @Override
-    public void update(Donor donation) {
-        donorRepository.save(donation);
+    public void update(Donor donor) {
+        donorRepository.save(donor);
     }
 
     @Override
-    public void deleteById(Long donationId) {
-        donorRepository.deleteById(donationId);
+    public void deleteById(Long donorId) {
+        donorRepository.deleteById(donorId);
     }
 
     @Override
     public void deleteAll() {
         donorRepository.deleteAll();
+    }
+
+    @Override
+    public List<Object[]> getDonorDetailsWithDonations() {
+        return donorRepository.getDonorDetailsWithDonations();
+    }
+
+    @Override
+    public List<Object[]> getDonorsWithDonationMethods() {
+        return donorRepository.getDonorsWithDonationMethods();
+    }
+
+    @Override
+    public List<Object[]> getDonorTotalDonations() {
+        return donorRepository.getDonorTotalDonations();
+    }
+
+    @Override
+    public List<Object[]> getDonorsWithDonationsAbove(Double amount) {
+        return donorRepository.getDonorsWithDonationsAbove(amount);
     }
 }
